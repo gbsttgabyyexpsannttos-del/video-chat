@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Página</title>
+</head>
+
+<body>
+  <h1>Olá! 👋</h1>
+  <p>Minha página está funcionando.</p>
+
+  <button id="cameraBtn">Ativar câmera</button>
+
+  <br><br>
+
+  <video id="video" autoplay playsinline width="300"></video>
+
+  <script>
+    const button = document.getElementById("cameraBtn");
+    const video = document.getElementById("video");
+
+    button.addEventListener("click", async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: false
+        });
+
+        video.srcObject = stream;
+      } catch (error) {
+        alert("Acesso à câmera não foi permitido.");
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>
