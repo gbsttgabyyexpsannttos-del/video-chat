@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M340 do ocult0</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dirthell</title>
 </head>
+
 <body>
-    <h1>Boa Noite</h1>
-    <p>Eut73nh0 Me40.....</p>
 
-    <button id="cameraBtn">deseja ver o video?</button>
+  <h1>Hide you</h1>
+  <p>M34o D0 0cUl70</p>
 
-    <br><br>
+  <!-- CÂMERA -->
+  <button id="cameraBtn">ver video?</button>
 
-    <!-- Vídeo com o arquivo local adicionado -->
-    <video controls width="300">
-        <source src="Lost%20Souls%20Player.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-    </video>
+  <br><br>
 
-    <br><br>
+  <video id="video" autoplay playsinline width="300"></video>
 
-    <!-- Vídeo configurado para a transmissão da câmera -->
-    <video id="video" autoplay playsinline width="300"></video>
+  <br><br>
 
-    <script>
-        const button = document.getElementById("cameraBtn");
-        const video = document.getElementById("video");
+  <!-- VÍDEO -->
+  <h2>Lost Place..</h2>
 
-        button.addEventListener("click", async () => {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({
-                    video: true,
-                    audio: false
-                });
+  <video controls width="300">
+    <source src="lost%20souls%20prayer%28720P_HD%29.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video>
 
-                video.srcObject = stream;
-            } catch (error) {
-                alert("Acesso à câmera não foi permitido.");
-                console.error(error);
-            }
+  <script>
+    const button = document.getElementById("cameraBtn");
+    const video = document.getElementById("video");
+
+    button.addEventListener("click", async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: false
         });
-    </script>
+
+        video.srcObject = stream;
+      } catch (error) {
+        alert("Acesso à câmera não foi permitido.");
+        console.error(error);
+      }
+    });
+  </script>
+
 </body>
 </html>
